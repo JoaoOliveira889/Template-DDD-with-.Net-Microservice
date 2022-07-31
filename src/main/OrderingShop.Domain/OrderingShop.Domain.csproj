@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Interfaces\" />
+    <None Remove="Shared\" />
+    <None Remove="Shared\Constants\" />
+    <None Remove="Shared\Enums\" />
+    <None Remove="AutoMapper" />
+    <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Entities\" />
+    <None Remove="Entities\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Shared\" />
+    <Folder Include="Shared\Constants\" />
+    <Folder Include="Shared\Enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+  </ItemGroup>
+    <ItemGroup>
+    <ProjectReference Include="..\OrderingShop.Infrastructure\OrderingShop.Infrastructure.csproj" />
+  </ItemGroup>
+    <ItemGroup>
+      <Compile Remove="Entities\**" />
+      <Compile Remove="Dtos\BaseDto.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Remove="Entities\**" />
+    </ItemGroup>
+</Project>
